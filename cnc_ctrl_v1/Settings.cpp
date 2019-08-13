@@ -419,11 +419,11 @@ byte settingsStoreGlobalSetting(const byte& parameter,const float& value){
               sysSettings.reserved2 = value;
               kinematics.recomputeGeometry();
               break;
-        case 75:
+        case 45:
               sysSettings.chainElongationFactor = value;
               kinematics.recomputeGeometry();
               break;
-        case 76:
+        case 46:
               sysSettings.sledWeight = value;
               kinematics.recomputeGeometry();
               break;
