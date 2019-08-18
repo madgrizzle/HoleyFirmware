@@ -404,28 +404,30 @@ byte settingsStoreGlobalSetting(const byte& parameter,const float& value){
               break;
         case 40:
               sysSettings.leftChainTolerance = value;
+              kinematics.init();
               break;
         case 41:
               sysSettings.rightChainTolerance = value;
+              kinematics.init();
               break;
         case 42:
               sysSettings.positionErrorLimit = value;
               break;
         case 43:
               sysSettings.reserved1 = value;
-              kinematics.recomputeGeometry();
+              kinematics.init();
               break;
         case 44:
               sysSettings.reserved2 = value;
-              kinematics.recomputeGeometry();
+              kinematics.init();
               break;
-        case 75:
+        case 45:
               sysSettings.chainElongationFactor = value;
-              kinematics.recomputeGeometry();
+              kinematics.init();
               break;
-        case 76:
+        case 46:
               sysSettings.sledWeight = value;
-              kinematics.recomputeGeometry();
+              kinematics.init();;
               break;
         default:
               return(STATUS_INVALID_STATEMENT);
