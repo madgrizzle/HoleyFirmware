@@ -256,6 +256,10 @@ void  returnError(){
         Serial.print(rightAxis.error());
         Serial.print(',');
         Serial.print(incSerialBuffer.spaceAvailable());
+        Serial.print(',');
+        Serial.print(leftAxis.read());
+        Serial.print(',');
+        Serial.print(rightAxis.read());
         Serial.println(F("]"));
         if (!sys.stop) {
           if (!(sys.state & STATE_POS_ERR_IGNORE)) {
