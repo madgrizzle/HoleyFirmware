@@ -297,10 +297,18 @@ void  returnPoz(){
         Serial.print(sys.yPosition/sys.inchesToMMConversion);
         Serial.print(F(","));
         Serial.print(zAxis.read()/sys.inchesToMMConversion);
-        Serial.println(F(",WPos:0.000,0.000,0.000>"));
+        Serial.print(F(",F:"));
+        Serial.print(sys.feedrate/sys.inchesToMMConversion);
+        Serial.print(F(",WPos:0.000,0.000,0.000"));
+        Serial.print(F(",PWR:"));
+        Serial.print(leftAxis.motorGearboxEncoder.motor.lastSpeed());
+        Serial.print(F(","));
+        Serial.print(rightAxis.motorGearboxEncoder.motor.lastSpeed());
+        Serial.print(F(","));
+        Serial.print(zAxis.motorGearboxEncoder.motor.lastSpeed());
+        Serial.println(F(">"));
 
-
-        returnError();
+        returnError();  //<--The SNKU/position error is reported here
 
         lastRan = millis();
     }
